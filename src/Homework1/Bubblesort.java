@@ -1,12 +1,11 @@
+package Homework1;
+
 import java.util.Arrays;
-
-
-class bubblesortpgm {
-
+class Bubblesort {
     public static void main(String[] args)
     {
         int[] a= {67,88,2,0,35,90,5};         //Array declaration and initialisation
-        System.out.println("Print Array elements before sorting" +Arrays.toString(a));  //To print array elements in single shot
+        System.out.println("Print Array elements before sorting" + Arrays.toString(a));  //To print array elements in single shot
         int l=a.length;                       //To get the array size
         for(int i=0;i<l-1;i++)
         {
@@ -20,7 +19,8 @@ class bubblesortpgm {
                 }
             }
         }
-      System.out.println("Print Array elements after bubble sort" +Arrays.toString(a));
+        System.out.println("Print Array elements after bubble sort" +Arrays.toString(a));
     }
 
 }
+
