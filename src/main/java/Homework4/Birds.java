@@ -1,6 +1,11 @@
 package Homework4;
-   public class Birds implements Classification,Supplies,Calculation {
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Birds implements Classification,Supplies,Calculation {
+
+    private static final Logger logger = LogManager.getLogger(String.valueOf(Birds.class));
         public String breed;
         private long petid;
         protected int age;
@@ -66,33 +71,33 @@ package Homework4;
        }
        public void characteristic() {
 
-            System.out.println("High power and low weight");
+            logger.info("High power and low weight");
         }
 
         public void sound() {
-            System.out.println("Bird chirps");
+            logger.info("Bird chirps");
         }
 
         public void food() {
 
-            System.out.println("Fortified Nutrition,wild bird feed and other foods are available for birds");
+            logger.info("Fortified Nutrition,wild bird feed and other foods are available for birds");
         }
         public void medicines()
         {
-            System.out.println("Bird Ferti-VIT,bird supplements and other medicines are available");
+            logger.info("Bird Ferti-VIT,bird supplements and other medicines are available");
         }
         public void accessories()
         {
-            System.out.println("Bird cage,bird feeder and other accessories are available");
+            logger.info("Bird cage,bird feeder and other accessories are available");
 
         }
         public void toys()
         {
-            System.out.println("Bird swing,play stand and other toys are available");
+            logger.info("Bird swing,play stand and other toys are available");
         }
         public void habitat()
         {
-            System.out.println("Lives in grassland,forestland,river,stream");
+            logger.info("Lives in grassland,forestland,river,stream");
         }
         public double amountofpurchase(int birdcount,double birdprice)
         {

@@ -1,8 +1,14 @@
 package Homework4;
-import java.util.*;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Pet extends InvalidPetInputException
 {
+ private static final Logger logger = LogManager.getLogger(String.valueOf(Pet.class));
     public Pet(String msg) {
         super(msg);
     }
@@ -15,13 +21,13 @@ public class Pet extends InvalidPetInputException
          speciestype.add("Birds");
          speciestype.add("Reptiles");
         for(String speciestypes:speciestype) {
-            System.out.println("Pets available in the store are:" +speciestypes);
+            logger.info("Pets available in the store are:" +speciestypes);
         }
 
         for(int i=0;i<5;i++)
         {
 
-            System.out.println("Enter the type of pet to know its details and availability");
+            logger.info("Enter the type of pet to know its details and availability");
             Scanner pettypeinput = new Scanner(System.in);
             String pettype = pettypeinput.next();
 
@@ -35,9 +41,9 @@ public class Pet extends InvalidPetInputException
                     dogDetails.add(dog);
                     dogDetails.add(dog1);
                     dogDetails.add(dog2);;
-                    System.out.println("Dog1 details: " + dog.species + "," + dog.count + "," + dog.breed + "," + dog.petid + "," + dog.gender + "," + dog.getHeight() + "," + dog.getWeight() + "," + dog.getColor());
-                    System.out.println("Dog2 details: " + dog1.species + "," + dog1.count + "," + dog1.breed + "," + dog1.petid + "," + dog1.gender + "," + dog1.getHeight() + "," + dog1.getWeight() + "," + dog1.getColor());
-                    System.out.println("Dog3 details: " + dog2.species + "," + dog2.count + "," + dog2.breed + "," + dog2.petid + "," + dog2.gender + "," + dog2.getHeight() + "," + dog2.getWeight() + "," + dog2.getColor());
+                    logger.info("Dog1 details: " + dog.species + "," + dog.count + "," + dog.breed + "," + dog.petid + "," + dog.gender + "," + dog.getHeight() + "," + dog.getWeight() + "," + dog.getColor());
+                    logger.info("Dog2 details: " + dog1.species + "," + dog1.count + "," + dog1.breed + "," + dog1.petid + "," + dog1.gender + "," + dog1.getHeight() + "," + dog1.getWeight() + "," + dog1.getColor());
+                    logger.info("Dog3 details: " + dog2.species + "," + dog2.count + "," + dog2.breed + "," + dog2.petid + "," + dog2.gender + "," + dog2.getHeight() + "," + dog2.getWeight() + "," + dog2.getColor());
                     dog.habitat();
                     dog.characteristic();
                     dog.sound();
@@ -46,10 +52,10 @@ public class Pet extends InvalidPetInputException
                     dog.accessories();
                     dog.toys();
                     
-                    System.out.println("Enter the dog count you need to purchase");
+                    logger.info("Enter the dog count you need to purchase");
                     Scanner countinput = new Scanner(System.in);
                     int dogcount = countinput.nextInt();
-                    System.out.println("Purchase amount: $" + dog.amountofpurchase(dogcount, dog.dogprice));
+                    logger.debug("Purchase amount: $" + dog.amountofpurchase(dogcount, dog.dogprice));
                 }
                 case "Cat" -> {
                     //Homework6 collections
@@ -60,9 +66,9 @@ public class Pet extends InvalidPetInputException
                     catDetails.add(cat);
                     catDetails.add(cat1);
                     catDetails.add(cat2);
-                    System.out.println("Cat details: " + cat.species + "," + cat.count + "," + cat.breed + "," + cat.petid + "," + cat.age + "," + cat.gender + "," + cat.getColor());
-                    System.out.println("Cat1 details: " + cat1.species + "," + cat1.count + "," + cat1.breed + "," + cat1.petid + "," + cat1.age + "," + cat1.gender + "," + cat1.getColor());
-                    System.out.println("Cat2 details: " + cat2.species + "," + cat2.count + "," + cat2.breed + "," + cat2.petid + "," + cat2.age + "," + cat2.gender + "," + cat2.getColor());
+                    logger.info("Cat details: " + cat.species + "," + cat.count + "," + cat.breed + "," + cat.petid + "," + cat.age + "," + cat.gender + "," + cat.getColor());
+                    logger.info("Cat1 details: " + cat1.species + "," + cat1.count + "," + cat1.breed + "," + cat1.petid + "," + cat1.age + "," + cat1.gender + "," + cat1.getColor());
+                    logger.info("Cat2 details: " + cat2.species + "," + cat2.count + "," + cat2.breed + "," + cat2.petid + "," + cat2.age + "," + cat2.gender + "," + cat2.getColor());
                     Cat.vaccination();
                     cat.habitat();
                     cat.characteristic();
@@ -71,10 +77,10 @@ public class Pet extends InvalidPetInputException
                     cat.medicines();
                     cat.accessories();
                     cat.toys();
-                    System.out.println("Enter the cat count you need to purchase");
+                    logger.info("Enter the cat count you need to purchase");
                     Scanner catcountinput = new Scanner(System.in);
                     int catcount = catcountinput.nextInt();
-                    System.out.println("Purchase amount: $" + cat.amountofpurchase(catcount, 980.55));
+                    logger.debug("Purchase amount: $" + cat.amountofpurchase(catcount, 980.55));
                 }
                 case "Birds" -> {
 
@@ -86,9 +92,9 @@ public class Pet extends InvalidPetInputException
                     birdDetails.add(bird);
                     birdDetails.add(bird1);
                     birdDetails.add(bird2);
-                    System.out.println("Bird details: " + bird.breed + "," + bird.getPetid() + "," + bird.age + "," + bird.gender + "," + bird.getColor() + "," + bird.getBirdprice());
-                    System.out.println("Bird details: " + bird1.breed + "," + bird1.getPetid() + "," + bird1.age + "," + bird1.gender + "," + bird1.getColor() + "," + bird1.getBirdprice());
-                    System.out.println("Bird details: " + bird2.breed + "," + bird2.getPetid() + "," + bird2.age + "," + bird2.gender + "," + bird2.getColor() + "," + bird2.getBirdprice());
+                    logger.info("Bird details: " + bird.breed + "," + bird.getPetid() + "," + bird.age + "," + bird.gender + "," + bird.getColor() + "," + bird.getBirdprice());
+                    logger.info("Bird details: " + bird1.breed + "," + bird1.getPetid() + "," + bird1.age + "," + bird1.gender + "," + bird1.getColor() + "," + bird1.getBirdprice());
+                    logger.info("Bird details: " + bird2.breed + "," + bird2.getPetid() + "," + bird2.age + "," + bird2.gender + "," + bird2.getColor() + "," + bird2.getBirdprice());
                     bird.habitat();
                     bird.characteristic();
                     bird.sound();
@@ -96,10 +102,10 @@ public class Pet extends InvalidPetInputException
                     bird.medicines();
                     bird.accessories();
                     bird.toys();
-                    System.out.println("Enter the bird count you need to purchase");
+                    logger.info("Enter the bird count you need to purchase");
                     Scanner birdcountinput = new Scanner(System.in);
                     int birdcount = birdcountinput.nextInt();
-                    System.out.println("Purchase amount: $" + bird.amountofpurchase(birdcount, 18.50));
+                    logger.debug("Purchase amount: $" + bird.amountofpurchase(birdcount, 18.50));
                 }
                 case "Fish" -> {
 
@@ -109,14 +115,14 @@ public class Pet extends InvalidPetInputException
                     Fish fish1 = new Fish("Zebra Fish", "Black and White");
                     fishDetails.add(fish);
                     fishDetails.add(fish1);
-                    System.out.println("Fish details: " + fish.breed + "," + fish.getColor());
-                    System.out.println("Fish details: " + fish1.breed + "," + fish1.getColor());
+                    logger.info("Fish details: " + fish.breed + "," + fish.getColor());
+                    logger.info("Fish details: " + fish1.breed + "," + fish1.getColor());
                     Aquaticbehaviour.swim();
                     fish.sustainability();
-                    System.out.println("Enter the fish count you need to purchase");
+                    logger.info("Enter the fish count you need to purchase");
                     Scanner fishcountinput = new Scanner(System.in);
                     int fishcount = fishcountinput.nextInt();
-                    System.out.println("Purchase amount: $" + fish.amountofpurchase(fishcount, 4.66));
+                   logger.debug("Purchase amount: $" + fish.amountofpurchase(fishcount, 4.66));
                 }
                 case "Reptiles" -> {
                     // Homework6 Generics implementation
@@ -126,10 +132,10 @@ public class Pet extends InvalidPetInputException
                     reptilenames2.setReptilename("Corn snake");
                     Reptiles<String> reptilenames3 = new Reptiles<>("Lizard Family");
                     reptilenames3.setReptilename("Cameleon");
-                    System.out.println("Reptiles available: "+reptilenames1.getReptilename() +"," +reptilenames2.getReptilename() +"," +reptilenames3.getReptilename());
+                    logger.info("Reptiles available: "+reptilenames1.getReptilename() +"," +reptilenames2.getReptilename() +"," +reptilenames3.getReptilename());
                 }
                 default -> {
-                    System.out.println("Pet not available");
+                    logger.info("Pet not available");
                     try {
                         throw new InvalidPetInputException("Invalid pet input pls enter a valid pettype: Dog/Cat/Birds/Fish/Snake");
                     } catch (InvalidPetInputException e) {

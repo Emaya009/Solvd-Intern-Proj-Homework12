@@ -1,7 +1,11 @@
 package Homework4;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Dog extends Animal implements Classification,Supplies,Calculation {
 
+    private static final Logger logger = LogManager.getLogger(String.valueOf(Dog.class));
     public String breed;
     protected long petid;
     public char gender;
@@ -67,33 +71,33 @@ public class Dog extends Animal implements Classification,Supplies,Calculation {
     }
     public void characteristic() {
 
-        System.out.println("Dogs are friendly in nature,loyal and playful");
+       logger.info("Dogs are friendly in nature,loyal and playful");
     }
 
     public void sound() {
-        System.out.println("Dog Barks");
+        logger.info("Dog Barks");
     }
 
     public void food() {
 
-        System.out.println("Dog foods are available");
+        logger.info("Dog foods are available");
 }
 public void medicines()
 {
-    System.out.println("Dog medicines are available");
+    logger.info("Dog medicines are available");
 }
     public void accessories()
     {
-        System.out.println("Dog accessories are available");
+        logger.info("Dog accessories are available");
 
     }
     public void toys()
     {
-        System.out.println("Dog toys are available");
+        logger.info("Dog toys are available");
     }
 
 public void habitat() {
-    System.out.println("Dog is a domestic animal");
+    logger.info("Dog is a domestic animal");
 }
 public double amountofpurchase(int dogcount,double dogprice)
 {

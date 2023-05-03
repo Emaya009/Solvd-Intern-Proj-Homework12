@@ -1,6 +1,11 @@
 package Homework4;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Fish implements Aquaticbehaviour,Calculation {
 
+    private static final Logger logger = LogManager.getLogger(String.valueOf(Fish.class));
         public String breed;
         private String color;
         static double fishprice=4.66;
@@ -37,12 +42,12 @@ public class Fish implements Aquaticbehaviour,Calculation {
 
     static void swim()
     {
-        System.out.println("Fishes swim in the water");
+        logger.info("Fishes swim in the water");
     }
 
     public final void sustainability()
     {
-        System.out.println("Fishes survive in salt water");
+        logger.info("Fishes survive in salt water");
     }
 
     public double amountofpurchase(int fishcount,double fishprice)

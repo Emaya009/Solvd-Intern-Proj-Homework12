@@ -1,6 +1,11 @@
 package Homework4;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Cat extends Animal implements Classification,Supplies,Calculation {
+
+    private static final Logger logger = LogManager.getLogger(String.valueOf(Cat.class));
     public String breed;
     protected long petid;
     protected float age;
@@ -59,36 +64,36 @@ public class Cat extends Animal implements Classification,Supplies,Calculation {
 
     public void characteristic() {
 
-        System.out.println("Cats are good companion for humans and good at hunting household pests");
+        logger.info("Cats are good companion for humans and good at hunting household pests");
     }
      public static void vaccination()
     {
         System.out.println("Cats are vaccinated");
     }
     public void sound() {
-        System.out.println("Cat meows");
+        logger.info("Cat meows");
     }
 
     public void food() {
 
-        System.out.println("Dry foods and sea food sensations ara available for cats");
+        logger.info("Dry foods and sea food sensations ara available for cats");
     }
     public void medicines()
     {
-        System.out.println("Cat tapeworm dewormer,heartguard and other medicines are available");
+        logger.info("Cat tapeworm dewormer,heartguard and other medicines are available");
     }
     public void accessories()
     {
-        System.out.println("Cat Litter,litter mat and other accessories are available");
+        logger.info("Cat Litter,litter mat and other accessories are available");
 
     }
     public void toys()
     {
-        System.out.println("Cat toys are available");
+        logger.info("Cat toys are available");
     }
     public void habitat()
     {
-        System.out.println("Cat is a domestic pet");
+        logger.info("Cat is a domestic pet");
     }
     public double amountofpurchase(int catcount,double catprice)
     {

@@ -1,6 +1,10 @@
 package Homework4;
 
-   public class Animal  {
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Animal  {
+    private static final Logger logger = LogManager.getLogger(String.valueOf(Animal.class));
        protected String species;
        protected int count;
 
@@ -27,7 +31,8 @@ package Homework4;
 
        void speciesdetails(String species, int count)
        {
-           System.out.println("Availability of the species entered");
+
+           logger.info("Availability of the species entered");
        }
 
    }
