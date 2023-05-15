@@ -1,4 +1,4 @@
-package Petshop;
+package petshop;
 
 public interface Aquaticbehaviour {
      static void swim()

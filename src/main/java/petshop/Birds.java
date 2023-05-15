@@ -1,9 +1,9 @@
-package Petshop;
+package petshop;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Birds implements Classification,Supplies {
+public class Birds implements Classification,Supplies,Runnable {
 
     private static final Logger logger = LogManager.getLogger(String.valueOf(Birds.class));
         public String breed;
@@ -13,7 +13,10 @@ public class Birds implements Classification,Supplies {
         private String color;
         private double birdprice;
 
-       public Birds(String breed, long petid, int age, char gender, String color, double birdprice) {
+    public Birds() {
+    }
+
+    public Birds(String breed, long petid, int age, char gender, String color, double birdprice) {
            this.breed = breed;
            this.petid = petid;
            this.age = age;
@@ -69,7 +72,23 @@ public class Birds implements Classification,Supplies {
        public void setBirdprice(double birdprice) {
            this.birdprice = birdprice;
        }
-       public void characteristic() {
+
+    @Override
+    public String toString() {
+        return "Birds{" +
+                "breed='" + breed + '\'' +
+                ", petid=" + petid +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", color='" + color + '\'' +
+                ", birdprice=" + birdprice +
+                '}';
+    }
+
+    @Override
+
+
+    public void characteristic() {
 
             logger.info("High power and low weight");
         }
@@ -100,5 +119,16 @@ public class Birds implements Classification,Supplies {
             logger.info("Lives in grassland,forestland,river,stream");
         }
 
+ //Homework11 implementing Runnable interface
+    @Override
+    public void run() {
+        logger.info("Implements Runnable Interface");
+        try {
+            Thread.sleep(2000);
+        }catch(Exception e)
+        {
+
+        }
     }
+}
 

@@ -1,9 +1,11 @@
-package Petshop;
+package petshop;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Dog extends Animal implements Classification,Supplies,Calculation {
+import java.util.Objects;
+
+public class Dog extends Animal implements Classification,Supplies,Calculation,Runnable {
 
     private static final Logger logger = LogManager.getLogger(String.valueOf(Dog.class));
     public String breed;
@@ -12,7 +14,11 @@ public class Dog extends Animal implements Classification,Supplies,Calculation {
     private double height;
     private double weight;
     private String color;
-    final double dogprice=1500;
+    final double DOG_PRICE=1500;
+
+    public Dog(String species, int count) {
+        super(species, count);
+    }
 
     public Dog(String species, int count, String breed, long petid, char gender, double height, double weight, String color) {
         super(species, count);
@@ -69,6 +75,34 @@ public class Dog extends Animal implements Classification,Supplies,Calculation {
     public void setColor(String color) {
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "breed='" + breed + '\'' +
+                ", petid=" + petid +
+                ", gender=" + gender +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", color='" + color + '\'' +
+                ", dogprice=" + DOG_PRICE +
+                ", species='" + species + '\'' +
+                ", count=" + count +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Dog dog)) return false;
+        return getPetid() == dog.getPetid() && getGender() == dog.getGender() && Double.compare(dog.getHeight(), getHeight()) == 0 && Double.compare(dog.getWeight(), getWeight()) == 0 && Double.compare(dog.DOG_PRICE, DOG_PRICE) == 0 && Objects.equals(getBreed(), dog.getBreed()) && Objects.equals(getColor(), dog.getColor());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBreed(), getPetid(), getGender(), getHeight(), getWeight(), getColor(), DOG_PRICE);
+    }
+
     public void characteristic() {
 
        logger.info("Dogs are friendly in nature,loyal and playful");
@@ -99,8 +133,13 @@ public void medicines()
 public void habitat() {
     logger.info("Dog is a domestic animal");
 }
-public double amountofpurchase(int dogcount,double dogprice)
+public double amountofpurchase(int dogcount,double DOG_PRICE)
 {
-    return dogcount*dogprice;
+    return dogcount*DOG_PRICE;
 }
+
+    @Override
+    public void run() {
+
+    }
 }

@@ -1,4 +1,4 @@
-package Petshop;
+package petshop;
 
 // Homework9 - Lambda Expression(Functional Interface)
 

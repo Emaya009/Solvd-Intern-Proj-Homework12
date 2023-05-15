@@ -1,4 +1,4 @@
-package Petshop;
+package petshop;
 
 import java.util.logging.Logger;
 public class Main {

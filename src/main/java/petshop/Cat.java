@@ -1,4 +1,4 @@
-package Petshop;
+package petshop;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,12 +8,16 @@ public class Cat extends Animal implements Classification,Supplies,Calculation {
     private static final Logger logger = LogManager.getLogger(String.valueOf(Cat.class));
     public String breed;
     protected long petid;
-    protected float age;
+    protected int age;
     public char gender;
     private String color;
-    final double catprice=1350;
+    final double CAT_PRICE=1350;
 
-    public Cat(String species, int count, String breed, long petid, float age, char gender, String color) {
+    Cat(String species, int count) {
+        super(species, count);
+    }
+
+    public Cat(String species, int count, String breed, long petid, int age, char gender, String color) {
         super(species, count);
         this.breed = breed;
         this.petid = petid;
@@ -38,11 +42,11 @@ public class Cat extends Animal implements Classification,Supplies,Calculation {
         this.petid = petid;
     }
 
-    public float getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(float age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -60,6 +64,20 @@ public class Cat extends Animal implements Classification,Supplies,Calculation {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "breed='" + breed + '\'' +
+                ", petid=" + petid +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", color='" + color + '\'' +
+                ", catprice=" + CAT_PRICE +
+                ", species='" + species + '\'' +
+                ", count=" + count +
+                '}';
     }
 
     public void characteristic() {
@@ -95,8 +113,8 @@ public class Cat extends Animal implements Classification,Supplies,Calculation {
     {
         logger.info("Cat is a domestic pet");
     }
-    public double amountofpurchase(int catcount,double catprice)
+    public double amountofpurchase(int catcount,double CAT_PRICE)
     {
-        return catcount*catprice;
+        return catcount*CAT_PRICE;
     }
 }

@@ -1,4 +1,4 @@
-package Petshop;
+package petshop;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,7 +32,7 @@ public class Animal  {
        void speciesdetails(String species, int count)
        {
 
-           logger.info("Availability of the species entered");
+           logger.info("Availability of the species entered " +species +"," +count);
        }
 
    }

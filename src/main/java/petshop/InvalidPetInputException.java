@@ -1,4 +1,4 @@
-package Petshop;
+package petshop;
 
 public class InvalidPetInputException extends java.lang.Exception
 {

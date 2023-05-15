@@ -1,4 +1,4 @@
-package Petshop;
+package petshop;
 
 import org.apache.commons.exec.util.StringUtils;
 import org.apache.commons.io.FileUtils;
@@ -46,7 +46,7 @@ public class Uniquewordcalculation {
             String result = "Number of unique words:" + numUniqueWords;
             FileUtils.writeStringToFile(outputfile, result+ "\n" + "List of unique words are" +uniquewords, "UTF-8");
 
-            }catch (IOException e) {
+        }catch (IOException e) {
             logger.error("An error occurred.");
             e.printStackTrace();
         }
