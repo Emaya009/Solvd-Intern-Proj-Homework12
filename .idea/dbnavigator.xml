@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="2a6eb430-f011-4d00-a366-78da9e158591">
-      <console name="MySQLConnection" type="STANDARD" schema="pharmacy_solvdinternproject" session="Main" />
+      <console name="MySQLConnection" type="STANDARD" schema="pharmacy_solvdinternproject" session="Main"><![CDATA[ALTER TABLE manufacturers DROP COLUMN id;]]></console>
     </connection>
     <connection id="c75c9fb7-02c7-4a2f-b484-f6bd6499a7f3">
       <console name="Connection" type="STANDARD" schema="mysql" session="Main" />
@@ -28,11 +28,30 @@
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="07d9f920-5755-43ee-9b09-d8d045862d87" dataset="pharmacy_solvdinternproject.doctors" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="07d9f920-5755-43ee-9b09-d8d045862d87" dataset="pharmacy_solvdinternproject.addresses" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="07d9f920-5755-43ee-9b09-d8d045862d87" dataset="pharmacy_solvdinternproject.customers" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="2a6eb430-f011-4d00-a366-78da9e158591" dataset="pharmacy_solvdinternproject.inventory" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="2a6eb430-f011-4d00-a366-78da9e158591" dataset="pharmacy_solvdinternproject.doctors" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="2a6eb430-f011-4d00-a366-78da9e158591" dataset="pharmacy_solvdinternproject.addresses" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="2a6eb430-f011-4d00-a366-78da9e158591" dataset="pharmacy_solvdinternproject.customers" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1847737b-f6c2-4041-94f4-c78506c3a720" dataset="pharmacy_solvdinternproject.medication" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1847737b-f6c2-4041-94f4-c78506c3a720" dataset="pharmacy_solvdinternproject.doctors" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1847737b-f6c2-4041-94f4-c78506c3a720" dataset="pharmacy_solvdinternproject.customers" active-filter-id="EMPTY_FILTER" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.FileConnectionMappingManager">
+    <mapping file-url="file://$USER_HOME$/OneDrive/Desktop/SQL/SQLfiles/testing code.sql" connection-id="07d9f920-5755-43ee-9b09-d8d045862d87" session-id="MAIN" current-schema="pharmacy_solvdinternproject" />
+    <mapping file-url="file://$PROJECT_DIR$/MySQLConnection.sql" connection-id="2a6eb430-f011-4d00-a366-78da9e158591" session-id="MAIN" current-schema="pharmacy_solvdinternproject" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
+  </component>
+  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+    <recently-used-interfaces />
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
@@ -609,5 +628,8 @@
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
   </component>
 </project>
