@@ -1,0 +1,3 @@
+ALTER TABLE doctors DROP COLUMN ID;
+
+SELECT * FROM doctors;
